@@ -19,7 +19,7 @@ extern "C" {
     // Should be re-exported
     #[no_mangle]
     pub fn foo_rfc3556_pub_with_no_mangle();
-    // Should warn
+    // Should warn and not be re-exported
     #[no_mangle]
     fn foo_rfc3556_priv_with_no_mangle();
 
@@ -33,7 +33,7 @@ extern "C" {
     // Should be re-exported
     #[no_mangle]
     pub static mut foo_rfc3556_global_pub_with_no_mangle: std::ffi::c_int;
-    // Should warn
+    // Should warn and not be re-exported
     #[no_mangle]
     static mut foo_rfc3556_global_priv_with_no_mangle: std::ffi::c_int;
 
